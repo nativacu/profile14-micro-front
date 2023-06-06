@@ -7,8 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public likedGames: string[] = [];
+  ngVersion = require('../../package.json').dependencies['@angular/core'];
+
   constructor() {
     this.likedGames = this.getLikedGames();
+    
   }
   getLikedGames(): string[] {
     const likedGames = localStorage.getItem('likedGames');
