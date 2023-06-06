@@ -27,22 +27,23 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      library: { type: "module" },
+      // library: { type: "module" },
 
       // For remotes (please adjust)
       name: "remoteapp3",
       filename: "remoteEntry.js",
       exposes: {
-        './ProfileV14Module': './/src/app/profile-v14/profile-v14.module.ts'
+        // './ProfileV14Module': './/src/app/profile-v14/profile-v14.module.ts',
+        './web-components': './src/bootstrap.ts',
       },
 
 
       shared: share({
-        "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-        "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-        "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-        "@angular/platform-browser": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-        "@angular/platform-browser-dynamic": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+        "@angular/core": { requiredVersion: 'auto' },
+        "@angular/common": { requiredVersion: 'auto' },
+        "@angular/router": { requiredVersion: 'auto' },
+        "@angular/platform-browser": { requiredVersion: 'auto' },
+        "@angular/platform-browser-dynamic": { requiredVersion: 'auto' },
 
         ...sharedMappings.getDescriptors()
       })
