@@ -11,8 +11,9 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "remoteapp3",
-    publicPath: "http://localhost:4204/",
-    // scriptType: "text/javascript",
+    // publicPath: "http://localhost:4204/"
+    publicPath: "https://scintillating-madeleine-31e054.netlify.app/",
+    scriptType: "text/javascript",
   },
   optimization: {
     runtimeChunk: false
