@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --common-chunk false --configuration production",
+    "build:prod": "ng build --prod --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
@@ -12,6 +13,7 @@
   "private": true,
   "dependencies": {
     "@angular-architects/module-federation": "^14.3.0",
+    "@angular-architects/module-federation-runtime": "^14.3.14",
     "@angular/animations": "^14.0.0",
     "@angular/cdk": "^14.2.0",
     "@angular/common": "^14.0.0",

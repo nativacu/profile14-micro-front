@@ -12,7 +12,7 @@ module.exports = {
   output: {
     uniqueName: "remoteapp3",
     publicPath: "http://localhost:4204/",
-    scriptType: "text/javascript",
+    // scriptType: "text/javascript",
   },
   optimization: {
     runtimeChunk: false
@@ -22,12 +22,12 @@ module.exports = {
       ...sharedMappings.getAliases(),
     }
   },
-  experiments: {
-    outputModule: true
-  },
+  // experiments: {
+  //   outputModule: true
+  // },
   plugins: [
     new ModuleFederationPlugin({
-      // library: { type: "module" },
+      library: { type: "var", name: "remoteapp3" },
 
       // For remotes (please adjust)
       name: "remoteapp3",
