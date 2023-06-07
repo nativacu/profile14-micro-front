@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, VERSION } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public likedGames: string[] = [];
-  ngVersion = require('../../package.json').dependencies['@angular/core'];
+  ngVersion = VERSION.full;
 
   constructor() {
     this.likedGames = this.getLikedGames();
