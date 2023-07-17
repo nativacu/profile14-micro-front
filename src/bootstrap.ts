@@ -5,6 +5,5 @@ import { bootstrap } from '@angular-architects/module-federation-tools';
 
 bootstrap(AppModule, {
   production: environment.production,
-  // appType: 'microfrontend'  // for micro frontend
-  appType: 'microfrontend',      // for shell
+  appType: 'microfrontend'  // for micro frontend
 });
