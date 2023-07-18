@@ -11,7 +11,7 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "remoteapp3",
-    // publicPath: "http://localhost:4204/"
+    // publicPath: "http://localhost:4204/",
     publicPath: "https://scintillating-madeleine-31e054.netlify.app/",
     scriptType: "text/javascript",
   },
@@ -23,9 +23,6 @@ module.exports = {
       ...sharedMappings.getAliases(),
     }
   },
-  // experiments: {
-  //   outputModule: true
-  // },
   plugins: [
     new ModuleFederationPlugin({
       library: { type: "var", name: "remoteapp3" },
@@ -34,7 +31,6 @@ module.exports = {
       name: "remoteapp3",
       filename: "remoteEntry.js",
       exposes: {
-        // './ProfileV14Module': './/src/app/profile-v14/profile-v14.module.ts',
         './web-components': './src/bootstrap.ts',
       },
 

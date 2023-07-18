@@ -23,7 +23,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: httpTranslateLoader,
+        useFactory: createTranslateLoader,
         deps: [HttpClient]
       }
     }),
@@ -49,6 +49,10 @@ export class AppModule {
   }
 }
 
-export function httpTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+export function assetsUrl(url: string): string {
+  return `${__webpack_public_path__}assets${url}`;
+}
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, assetsUrl('/i18n/'), '.json');
 }
